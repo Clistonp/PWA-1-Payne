@@ -18,11 +18,11 @@
 	var validate = function(query){
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) == (" ")){
+		while(query.charAt(0) === (" ")){
 			query = query.substring(1, query.length);
 		};
 		while(query.charAt(query.length-1) === "") {
-            query = query.substring(0, query.length - 1);
+            query = query.substring(0, query.length-1);
         };
 		
 		// Check search length, must have 3 characters
@@ -102,8 +102,8 @@
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
-			titleEnd = results[i].indexOf('|');
-			title = results[i].subString(0, titleEnd);
+		     titleEnd = results[i].indexOf('|');
+			title = results[i].substring(0, titleEnd);
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);
