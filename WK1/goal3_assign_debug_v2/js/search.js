@@ -18,7 +18,7 @@
 	var validate = function(query){
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = (" ")){
+		while(query.charAt(0) == (" ")){
 			query = query.substring(1, query.length);
 		};
 		while(query.charAt(query.length-1) === "") {
@@ -41,7 +41,7 @@
 	var search = function(query){
 		
 		// split the user's search query string into an array
-		var queryArray = query.join(" ");
+		var queryArray = query.split(" ");
 		
 		// array to store matched results from database.js
 		var results = [];
@@ -52,12 +52,12 @@
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
 			var dbTitleEnd = db[i].indexOf('|');
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
+			var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);
 			
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
 			for(var ii=0, jj=queryArray.length; ii<jj; ii++) {
-                var qitem = queryArray[ii].tolowercase();
+                var qitem = queryArray[ii].toLowerCase();
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
