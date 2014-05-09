@@ -68,7 +68,7 @@
 
 
 
-            };
+        }   };
 		results.sort();
 		
 		// Check that matches were found, and run output functions
@@ -118,11 +118,10 @@
 	// THE LINE DIRECTLY BELOW IS CORRECT
 	document.forms[0].onsubmit = function() {
         var query = searchInput.value;
-        validqte(query);
+        validate(query);
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
         return false;
     };
-
-        )}();
+})();
