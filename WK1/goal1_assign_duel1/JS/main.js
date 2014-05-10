@@ -6,7 +6,7 @@
 
 //self executing function
 (function(){
-    console.log("fight");
+    console.log("Fight!!!");
 //player names
     var playerOneName = "Kabal";
     var playerTwoName = "Kratos";
@@ -22,13 +22,13 @@
     var playerTwoHealth = 100;
 
 //Round
-    var round = 0;
+    var round=0;
 
     function fight(){
         //console.log("in the fight function");
         alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);
 
-        for (var i=0;  i < 10; i++){
+        for (var i = 0;  i < 10; i++){
 
            var minDamage1 = playerOneDamage * .5;
            var minDamage2 = playerTwoDamage * .5;
@@ -43,39 +43,42 @@
             //console.log(playerTwoHealth);
            console.log(playerOneName+":"+playerOneHealth+"  "+playerTwoName+":"+playerTwoHealth);
 
-            var results = winnerCheck();
-            console.log(results);
+            var result = winnerCheck();
+            console.log(result);
 
-            if (results === "No Winner") {
+            if (result === "No Winner") {
                 round++;
                 alert(playerOneName + ":" + playerOneHealth + " *ROUND " + round + " OVER* " + playerTwoName + ":" + playerTwoHealth);
             }else{
-                alert(results);
+                alert(result);
                 break;
-            }
-        }
+            };
+        };
 
-    }
+    };
 
 
 
     function winnerCheck() {
-        console.log("in winnerCheck fn")
+        //console.log("in winnerCheck fn")
 
-        var results = "No Winner";
+        var result = "No Winner";
 
-        if (playerOneHealth < 1 && playerTwoHealth < 1) {
+        if (playerOneHealth<1 && playerTwoHealth<1)
+        {
             result = "You Both are Dead";
-        } else if (playerOneHealth < 1) {
-            result = playerTwoName + "WINS!!!"
-        } else if (playerTwoHealth < 1) {
-            result = playerOneName + "WINS!!!"
-        }
+        } else if (playerOneHealth<1)
+        {
+            result = playerTwoName+ "WINS!!!"
+        } else if (playerTwoHealth<1)
+        {
+            result = playerOneName+ "WINS!!!"
+        };
 
-        return results;
-    }
+        return result;
+    };
 
-    console.log("program start")
+    //console.log("program start")
     fight();
 
 
