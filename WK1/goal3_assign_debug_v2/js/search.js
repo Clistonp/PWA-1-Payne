@@ -18,10 +18,10 @@
 	var validate = function(query){
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) === (" ")){
+		while(query.charAt(0) == (" ")){
 			query = query.substring(1, query.length);
 		};
-		while(query.charAt(query.length-1) === "") {
+		while(query.charAt(query.length-1) == "") {
             query = query.substring(0, query.length-1);
         };
 		
@@ -32,6 +32,7 @@
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
 			return;
+
 		};
 		
 		search(query);
@@ -39,45 +40,48 @@
 	
 	// Finds search matches
 	var search = function(query){
-		
+
 		// split the user's search query string into an array
-		var queryArray = query.split(" ");
-		
+		var queryArray = query.split("");
+
 		// array to store matched results from database.js
 		var results = [];
 
 		// loop through each index of db array
 		for(var i=0, j=db.length; i<j; i++){
-		
+
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
 			var dbTitleEnd = db[i].indexOf('|');
-			var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);
-			
+			var dbItem = db[i].toLowerCase().substring(0, dbTitleEnd);
+
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++) {
-                var qitem = queryArray[ii].toLowerCase();
+			for(var ii = 0, jj = queryArray.length; ii < jj; ii++) {
+                var qItem = queryArray[ii].toLowerCase();
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
-                var compare = dbitem.indexOf(qitem);
+                var compare = dbItem.indexOf(qItem);
                 if (compare !== -1) {
                     results.push(db[i]);
-                };
+                }
+                ;
 
 
+            }
+        }
+        ;
+        results.sort();
 
-        }   };
-		results.sort();
-		
-		// Check that matches were found, and run output functions
-		if(results.length = 0){
-			noMatch();
-		}else{
-			showMatches(results);
-		};
-	};
+        // Check that matches were found, and run output functions
+        if (results.length = 0) {
+            noMatch();
+        } else {
+            showMatches(results);
+        }
+        ;
+    };
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
 	var noMatch = function(){
@@ -102,7 +106,7 @@
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
-		     titleEnd = results[i].indexOf('|');
+		    titleEnd = results[i].indexOf('|');
 			title = results[i].substring(0, titleEnd);
 			
 			// pull the video url after the title
