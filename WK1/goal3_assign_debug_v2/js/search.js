@@ -11,8 +11,7 @@
     // Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
     var resultsDIV = document.getElementById("results"),
         searchInput = document.forms[0].search,
-        currentSearch = ''
-        ;
+        currentSearch = '';
 	
 	// Validates search query
 	var validate = function(query){
@@ -21,7 +20,7 @@
 		while(query.charAt(0) == (" ")){
 			query = query.substring(1, query.length);
 		};
-		while(query.charAt(query.length-1) == "") {
+		while(query.charAt(query.length-1) === "") {
             query = query.substring(0, query.length-1);
         };
 		
@@ -40,7 +39,7 @@
 	
 	// Finds search matches
 	var search = function(query){
-
+        console.log("Im in the search function");
 		// split the user's search query string into an array
 		var queryArray = query.split("");
 
@@ -65,22 +64,22 @@
                 var compare = dbItem.indexOf(qItem);
                 if (compare !== -1) {
                     results.push(db[i]);
-                }
-                ;
+                };
 
 
-            }
-        }
-        ;
+
+            };
+        };
+
         results.sort();
 
         // Check that matches were found, and run output functions
-        if (results.length = 0) {
+        if (results.length === 0) {
             noMatch();
         } else {
             showMatches(results);
-        }
-        ;
+        };
+
     };
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
