@@ -57,7 +57,7 @@
         gameState = "Guess: " + guessesMade + ", Remaining: " + remainingGuess;
 
         playerGuess = parseInt(input.value);
-
+            // if and if else and else statements that give a hint at the number and if you win the game or loose and need to refresh
         if (playerGuess > magicNum){
             dom.output.innerHTML = "Your Number is to high." + gameState;
 
@@ -65,11 +65,31 @@
             dom.output.innerHTML = "Your Number is to Low. " + gameState;
 
         }else if (playerGuess === magicNum){
-            dom.output.innerHTML = ""
-        }
+            dom.output.innerHTML = "You are the Champion Hit reload and see if you can do it again." + gameState;
+        };
 
+                          // if Statement for when the game is over
+        if (remainingGuess < 1){
+            dom.output.innerHTML = " You lost but should try your luck again reload page."
+            console.log("Game Over : remainingGuess is < 1");
+            gameOver(false);
+        };
+
+    };
+
+    var gameOver = function(win){
+
+        if (win){
+            dom.output.InnerHTML
+            = "Yes it is " + magicNum + "!" + "<br>"
+            + "It only took " + guessesMade + "trys.";
+        }else{
+            dom.output.innerHTML
+            = "No more guesses left." + "<br>"
+            + "The Number was: " + magicNum + ".";
+
+        };
     }
-
 
 
 
