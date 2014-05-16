@@ -76,23 +76,36 @@
         };
 
     };
-
+         // Game over function
     var gameOver = function(win){
 
         if (win){
-            dom.output.InnerHTML
+            dom.output.InnerHTML     // if you win
             = "Yes it is " + magicNum + "!" + "<br>"
             + "It only took " + guessesMade + "trys.";
         }else{
-            dom.output.innerHTML
+            dom.output.innerHTML   //  if you lose
             = "No more guesses left." + "<br>"
             + "The Number was: " + magicNum + ".";
 
         };
+
+        dom.button.removeEventListener("click", clickFn, false); // disables the button addEventListener
+
     }
 
+       var oneKeyDown = function(e){
+           if(e.keyCode === 13){
+               validateInput();
+           };
+       };
 
+    console.log(magicNum);
+    // add the eventListner method
+    dom.button.addEventListener("click", clickFn, false);
 
+    //listening for the enter key
+    window.addEventListener("keydown", onKeyDown, false);
 
 
 })();
