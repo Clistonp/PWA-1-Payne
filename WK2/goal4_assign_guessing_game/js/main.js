@@ -39,7 +39,12 @@
         if (isNaN(playerGuess)){
             dom.output.innerHTML ="Please enter a Number";
 
-        }
+        }else if (playerGuess < 1 || playerGuess > 10){     //else if that makes sure the number if between 1 and 10
+            dom.output.innerHTML = "Enter a Number between 1 and 10.";
+
+        }else{
+            playGame();
+        };
     }
 
 
