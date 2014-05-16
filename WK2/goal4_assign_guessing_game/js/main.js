@@ -45,6 +45,29 @@
         }else{
             playGame();
         };
+    };
+
+                                         //Now we play the game
+
+
+    //updates the variables
+    var playGame = function(){
+        remainingGuess--;
+        guessesMade++;
+        gameState = "Guess: " + guessesMade + ", Remaining: " + remainingGuess;
+
+        playerGuess = parseInt(input.value);
+
+        if (playerGuess > magicNum){
+            dom.output.innerHTML = "Your Number is to high." + gameState;
+
+        }else if(playerGuess < magicNum){
+            dom.output.innerHTML = "Your Number is to Low. " + gameState;
+
+        }else if (playerGuess === magicNum){
+            dom.output.innerHTML = ""
+        }
+
     }
 
 
