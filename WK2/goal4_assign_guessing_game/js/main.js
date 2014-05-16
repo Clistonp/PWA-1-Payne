@@ -33,6 +33,14 @@
         validateInput();
 
     };
+    //Function that validates whether a number is placed in the guess box
+    var validateInput = function(){
+        playerGuess = parseInt(dom.input.value);
+        if (isNaN(playerGuess)){
+            dom.output.innerHTML ="Please enter a Number";
+
+        }
+    }
 
 
 
