@@ -30,11 +30,11 @@ Date:5/16/14
             //console.log(f1);
             //console.log(f2);
             //inflict Damage
-            playerOneHealth -= f1;
-            playerTwoHealth -= f2;
+            fighter1[2] -= f1;
+            fighter2[2] -= f2;
             //console.log(playerOneHealth);
             //console.log(playerTwoHealth);
-            console.log(playerOneName+":"+playerOneHealth+"  "+playerTwoName+":"+playerTwoHealth);
+            console.log(fighter1[0]+":"+fighter1[2]+"  "+fighter2[0]+":"+fighter2[2]);
 
             var result = winnerCheck();
             console.log(result);
