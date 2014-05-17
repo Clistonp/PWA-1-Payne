@@ -38,10 +38,10 @@ Date:5/16/14
 
             var result = winnerCheck();
             console.log(result);
-
+                            //if and else statements to check if there is a winner, continues to next round if there is no winner
             if (result === "No Winner") {
                 round++;
-                alert(playerOneName + ":" + playerOneHealth + " *ROUND " + round + " OVER* " + playerTwoName + ":" + playerTwoHealth);
+                alert(fighter1[0] + ":" + fighter1[2] + " *ROUND " + round + " OVER* " + fighter2[0] + ":" + fighter2[2]);
             }else{
                 alert(result);
                 break;
