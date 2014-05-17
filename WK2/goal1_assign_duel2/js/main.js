@@ -15,14 +15,14 @@ Date:5/16/14
 
 
 //Round number
-    var round=0;
+    var round= 0;
 
     function fight(){
-
+            // alert box for the duration of the fight
         alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);
 
         for (var i = 0;  i < 10; i++){
-
+                // variable that determines the damage done by each fighter randomly
             var minDamage1 = fighter1[1] * .5;
             var minDamage2 = fighter2[1] * .5;
             var f1 = Math.floor(Math.random()*(fighter1[1]-minDamage1)+minDamage1);
@@ -31,7 +31,7 @@ Date:5/16/14
             //inflict Damage
             fighter1[2] -= f1;
             fighter2[2] -= f2;
-
+                // logs the fighters health after each round
             console.log(fighter1[0]+":"+fighter1[2]+"  "+fighter2[0]+":"+fighter2[2]);
 
             var result = winnerCheck();
@@ -52,7 +52,7 @@ Date:5/16/14
 
     function winnerCheck() {
 
-
+        // if statements that displays a result for the winner of the Fight
         var result = "No Winner";
 
         if (fighter1[2]<1 && fighter2[2]<1)
@@ -66,7 +66,7 @@ Date:5/16/14
             result = fighter1[0]+ "WINS!!!"
         };
 
-        return result;
+        return result; // returns the result of the match
     };
 
 
