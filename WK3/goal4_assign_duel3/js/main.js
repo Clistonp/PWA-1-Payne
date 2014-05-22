@@ -18,17 +18,20 @@
     var button = document.getElementById("fight_btn");// allows the use of the fight button
 
 
-
-
-
-
-
 //player names damage and health array//
-    var fighter1 = ["Kabal", 20, 100];
-    var fighter2 = ["Kratos", 20, 100];
+    var fighters = [
+        {
+            name: "Kabal",
+            damage: 20,
+            health: 100
+        },
+        {   name: "Kratos",
+            damage: 20,
+            health: 100
+        }];
 
 //Round number
-    var round= 0;
+    var round = 0;
 
     function fight(){
         // alert box for the duration of the fight
