@@ -10,7 +10,15 @@
  */
 //self executing function
 (function(){
-    console.log("Fight!!!");
+    console.log("Fight!!!"); //calls fight to the console.log
+
+    var fighter1_txt = documnet.getElementById("kabal").querySelector("p");
+
+
+
+
+
+
 
 //player names damage and health array//
     var fighter1 = ["Kabal", 20, 100];
