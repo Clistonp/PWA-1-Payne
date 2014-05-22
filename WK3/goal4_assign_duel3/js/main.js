@@ -12,7 +12,10 @@
 (function(){
     console.log("Fight!!!"); //calls fight to the console.log
 
-    var fighter1_txt = documnet.getElementById("kabal").querySelector("p");
+    var fighter1_txt = document.getElementById("kabal").querySelector("p");// Pulls the info for fighter Kabal
+    var fighter2_txt = document.getElementById("kratos").querySelector("p");//pulls the info for the fighter Kratos
+    var round_txt = document.querySelector("h4");// uses the test on H4
+    var button = document.getElementById("fight_btn");// allows the use of the fight button
 
 
 
