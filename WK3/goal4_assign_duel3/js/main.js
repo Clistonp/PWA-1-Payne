@@ -12,7 +12,7 @@
 (function(){
     console.log("Fight!!!");
 
-//player names damage and health array
+//player names damage and health array//
     var fighter1 = ["Kabal", 20, 100];
     var fighter2 = ["Kratos", 20, 100];
 
