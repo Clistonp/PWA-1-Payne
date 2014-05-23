@@ -55,7 +55,7 @@
             fighters[0] -= f1;
             fighters[1] -= f2;
             // logs the fighters health after each round
-            console.log(fighter1[0]+":"+fighter1[2]+"  "+fighter2[0]+":"+fighter2[2]);
+            console.log(fighters[0].health, fighters[1].health);
 
             var result = winnerCheck();
             console.log(result);
