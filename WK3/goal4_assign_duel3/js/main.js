@@ -57,8 +57,8 @@
             var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage *.5);
 
             //inflict Damage
-            fighters[0] -= f1;
-            fighters[1] -= f2;
+            fighters[0].health -= f1;
+            fighters[1].health -= f2;
             // logs the fighters health after each round
             console.log(fighters[0].health, fighters[1].health);
 
