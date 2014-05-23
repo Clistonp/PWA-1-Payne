@@ -17,7 +17,7 @@
     var round_txt = document.querySelector("h4");// uses the test on H4
     var button = document.getElementById("fight_btn");// allows the use of the fight button
 
-    console.log()
+    console.log();
     //adding a event listener
     button.addEventListener("click", fight, false);
 //player names damage and health into an array of objects//
@@ -73,8 +73,8 @@
                 fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
                 fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
             }else{
-                fighter1_txt.innerHTML = results;
-                fighter2_txt.innerHTML = results;
+                fighter1_txt.innerHTML = result;
+                fighter2_txt.innerHTML = "";
 
                // disable the fight button
                 button.removeEventListener("click", fight, false);
@@ -82,12 +82,7 @@
                 document.querySelector(".buttonblue").innerHTML = "DONE!!";
             }
 
-
-
-
-
-
-       // };
+        //};
 
     };
 
@@ -111,9 +106,5 @@
 
         return result; // returns the result of the match
     };
-
-
-
-
 
 })();
