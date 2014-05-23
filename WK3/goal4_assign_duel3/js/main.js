@@ -17,8 +17,9 @@
     var round_txt = document.querySelector("h4");// uses the test on H4
     var button = document.getElementById("fight_btn");// allows the use of the fight button
 
-
-
+    console.log()
+    //adding a event listener
+    button.addEventListener("click", fight, false);
 //player names damage and health into an array of objects//
     var fighters = [
         {
@@ -39,7 +40,7 @@
     fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
     round_txt.innerHTML = "Clicky on the Fight button to start the battle Royal!!";
 
-
+//Creating the fight function for the Epic battle...
     function fight(){
         // alert box for the duration of the fight
         //alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);
@@ -59,14 +60,29 @@
 
             var result = winnerCheck();
             console.log(result);
+            round_txt.innerHTML = "Round #" + round +" Results:";
+            round++;
+
             //if and else statements to check if there is a winner, continues to next round if there is no winner
-            if (result === "No Winner") {
-                round++;
-                alert(fighter1[0] + ":" + fighter1[2] + " *ROUND " + round + " OVER* " + fighter2[0] + ":" + fighter2[2]);
+            if (result === "No Winner")
+            {
+                fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
+                fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
             }else{
-                alert(result);
-                break;
-            };
+                fighter1_txt.innerHTML = results;
+                fighter2_txt.innerHTML = "";
+
+               // disable the fight button
+                button.removeEventListener("click", fight, false);
+
+                document.querySelector(".buttonblue").innerHTML = "DONE!!";
+            }
+
+
+
+
+
+
        // };
 
     };
@@ -78,22 +94,22 @@
         // if statements that displays a result for the winner of the Fight
         var result = "No Winner";
 
-        if (fighter1[2]<1 && fighter2[2]<1)
+        if (fighters[0].health < 1 && fighters[1].health < 1)
         {
             result = "You Both are Dead";
-        } else if (fighter1[2]<1)
+        } else if (fighters[0].health < 1)
         {
-            result = fighter2[0]+ "WINS!!!"
-        } else if (fighter2[2]<1)
+            result = fighters[1].name + "WINS!!!"
+        } else if (fighters[1].health < 1)
         {
-            result = fighter1[0]+ "WINS!!!"
+            result = fighters[0].name + "WINS!!!"
         };
 
         return result; // returns the result of the match
     };
 
 
-    fight();
+
 
 
 })();
