@@ -18,7 +18,8 @@
     var button = document.getElementById("fight_btn");// allows the use of the fight button
 
 
-//player names damage and health array//
+
+//player names damage and health into an array of objects//
     var fighters = [
         {
             name: "Kabal",
@@ -31,22 +32,28 @@
         }];
 
 //Round number
-    var round = 0;
+    var round = 1;
+
+    //Creating the text for the top of the page using the Dom
+    fighter1_txt.innerHTML = fighters(0).name + ":" + fighters(0).health;
+    fighter2_txt.innerHTML = fighters(1).name + ":" + fighters(1).health;
+    round_txt.innerHTML = "Clicky on the Fight button to start the battle Royal!!";
+
 
     function fight(){
         // alert box for the duration of the fight
-        alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);
+        //alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);
 
         for (var i = 0;  i < 10; i++){
             // variable that determines the damage done by each fighter randomly
-            var minDamage1 = fighter1[1] * .5;
-            var minDamage2 = fighter2[1] * .5;
-            var f1 = Math.floor(Math.random()*(fighter1[1]-minDamage1)+minDamage1);
-            var f2 = Math.floor(Math.random()*(fighter2[1]-minDamage2)+minDamage2);
+           // var minDamage1 = fighter1[1] * .5;
+           // var minDamage2 = fighter2[1] * .5;
+            var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage *.5);
+            var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage *.5);
 
             //inflict Damage
-            fighter1[2] -= f1;
-            fighter2[2] -= f2;
+            fighter1[0] -= f1;
+            fighter2[1] -= f2;
             // logs the fighters health after each round
             console.log(fighter1[0]+":"+fighter1[2]+"  "+fighter2[0]+":"+fighter2[2]);
 
