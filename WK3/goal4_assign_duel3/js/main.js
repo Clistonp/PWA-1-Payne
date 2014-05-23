@@ -44,11 +44,15 @@
     function fight(){
         // alert box for the duration of the fight
         //alert(fighter1[0]+":"+fighter1[2]+" *START* "+fighter2[0]+":"+fighter2[2]);
-
+        fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
+        fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
+                //commented out the for statement
         //for (var i = 0;  i < 10; i++){
             // variable that determines the damage done by each fighter randomly
            // var minDamage1 = fighter1[1] * .5;
            // var minDamage2 = fighter2[1] * .5;
+
+        //math variable that determine the damage each player is doing to the other player generated randomly
             var f1 = Math.floor(Math.random() * fighters[0].damage + fighters[0].damage *.5);
             var f2 = Math.floor(Math.random() * fighters[1].damage + fighters[1].damage *.5);
 
@@ -70,7 +74,7 @@
                 fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
             }else{
                 fighter1_txt.innerHTML = results;
-                fighter2_txt.innerHTML = "";
+                fighter2_txt.innerHTML = results;
 
                // disable the fight button
                 button.removeEventListener("click", fight, false);
@@ -88,7 +92,7 @@
     };
 
 
-
+     //function to check for a winner
     function winnerCheck() {
 
         // if statements that displays a result for the winner of the Fight
