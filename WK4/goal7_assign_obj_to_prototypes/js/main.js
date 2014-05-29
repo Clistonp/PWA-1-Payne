@@ -41,8 +41,18 @@
 
     function populateHTML(data,field){
         var id = documnet.getElementById(field);
+        id.innerHTML = data;
 
     }
+    //function to run the update
+    ////console.log to return the people array to the console
+    // .update the proptotype methos in the person.js file
+    function runUpdate(){
+        people.forEach(function(element){
+            console.log(element);
+            element.update();
 
+        })
+    }
 
-}
+})()
