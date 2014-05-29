@@ -28,16 +28,16 @@
             this.row = row;
 
             //display the first action
-            var id = documnet.getElementById("r" + this.row + "c3");
+            var id = document.getElementById("r" + this.row + "c3");
             id.innerHTML = this.action;
 
-        };
+        }
     //Person's update method This happens 30 times a second and randomly determines if the action changes for each person
 
     Person.prototype.update = function(){
         if (Math.floor(Math.random() <.01)){
-            var i = Math.floor(Math.random()* Person.action.length);
-            this.action = Person.action[i];
+            var z = Math.floor(Math.random()* Person.actions.length);
+            this.action = Person.actions[z];
             var id = document.getElementById("r" + this.row + "c3");
             id.innerHTML = this.action;
 

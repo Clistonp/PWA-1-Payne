@@ -18,7 +18,7 @@
     // creating a loop that creates 3 person objects perload
     for (var z = 0; z < numPeople; z++) {
 
-        //Generate a number up to the names.lengthwhich is 5
+        //Generate a number up to the names.length which is 5
         var peepsIndex = Math.floor(Math.random()* names.length);
 
         //use a keyword to set up a new person
@@ -28,7 +28,7 @@
         populateHTML(person.name,"r" + (z + 1) + "c1");
         populateHTML(person.job, "r" + (z + 1) + "c2");
 
-        people.push(person);
+        peeps.push(person);
         names.splice(peepsIndex, 1);
 
     }
@@ -40,7 +40,7 @@
     interval = setInterval(runUpdate, 1000 / 30);
 
     function populateHTML(data,field){
-        var id = documnet.getElementById(field);
+        var id = document.getElementById(field);
         id.innerHTML = data;
 
     }
@@ -48,11 +48,11 @@
     ////console.log to return the people array to the console
     // .update the proptotype methos in the person.js file
     function runUpdate(){
-        people.forEach(function(element){
-            console.log(element);
+        peeps.forEach(function(element){
+            //console.log(element);
             element.update();
 
-        })
+        });
     }
 
-})()
+})();
