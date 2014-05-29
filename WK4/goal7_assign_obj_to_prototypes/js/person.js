@@ -14,4 +14,16 @@
     Person.jobs = ["Marine","Police Officer","Dental Assistant","Construction Foremen","Teacher" ];
     Person.actions = ["Training", "Break","Resting","Working"];
 
+        function Person(name, row){
+            console.log("Person Created: ", name);
+
+            this.name = name;
+            //setting the action for each person to be random
+            this.action = Person.actions[Math.floor(Math.random()*Person.actions.length)];
+
+            //set job to be random
+            this.job = Person.jobs[Math.floor(Math.random()*Person.jobs.length)];
+
+            //
+        }
 }
